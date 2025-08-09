@@ -1,5 +1,5 @@
 'use client';
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Pointer } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -118,18 +118,22 @@ export default function Home() {
 
         {/* Action Buttons - now Links */}
         <div className="flex flex-col md:flex-row gap-2 items-center space-x-4 mb-20 relative">
-          <Link
-            href="/gallery"
+          <a
+            href="https://github.com/Dearbornadeolu/designs-repo/tree/main/web"
+            target="_blank"
+            rel="noopener noreferrer"
+
             className="bg-black bg-opacity-70 px-8 py-3 rounded-full text-white font-medium border border-white border-opacity-25 hover:bg-white hover:text-black transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm"
           >
-            <span>Get Started Now</span>
+            <Pointer className="w-4 h-4 text-white" />
+            <span>Github Repo</span>
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
           <Link
             href="/gallery"
             className="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300"
           >
-            Discover More
+            Discover Designs
           </Link>
           
           {/* Rainfall lines under buttons */}
