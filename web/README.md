@@ -55,7 +55,7 @@ Follow these steps to set up the project locally and start exploring or contribu
 ## Project Structure
 
 * `/components`: Reusable React components (e.g., hero sections, buttons)
-* `/pages`: Next.js pages (e.g., `index.js` for the homepage)
+* `/app`: Next.js pages (e.g., `index.js` for the homepage)
 * `/styles`: Global styles and Tailwind CSS configurations
 * `/public`: Static assets (e.g., images, icons)
 
@@ -138,7 +138,7 @@ Content and inspiration for this README are derived from community resources and
 
 ## Connect With Us
 
-* **GitHub**: [Your GitHub Profile](https://github.com/your-username)
+* **GitHub**: [Your GitHub Profile](https://github.com/dearbornadeolu)
 * **X**: Follow [Dearborn Adeyeni](https://x.com/DearbornAdeyeni) for updates
 * **Community**: Join the discussion by opening an issue or reaching out!
 

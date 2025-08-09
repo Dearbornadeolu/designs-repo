@@ -139,7 +139,7 @@ export default function Home() {
         </div>
 
 
-        {/* DeFi Horizons Label - positioned exactly like screenshot */}
+
         <div className="absolute bottom-16 right-8 text-right">
           <div className="text-white font-light text-sm mb-3 tracking-wide">Design & Development</div>
           <div className="w-12 h-px bg-white ml-auto opacity-80"></div>
