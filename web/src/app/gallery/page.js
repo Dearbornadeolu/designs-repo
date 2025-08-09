@@ -21,7 +21,15 @@ const ComponentShowcase = () => {
             id: 'postpilot',
             component: PostPilot,
             title: 'PostPilot',
-            description: 'A modern social media management landing page with clean design and engaging hero section.'
+            description: 'A modern social media management landing page with clean design and engaging hero section.',
+            viewMode: viewModes.postpilot,
+            onViewModeChange: (mode) => handleViewModeChange('postpilot', mode),
+            designerName : 'Nero',
+            designerLink: 'https://x.com/nerooeth/status/1953452697815863445',
+            developerName : 'Dearborn Adeyeni',
+            developerLink : 'github.com/Dearbornadeolu',
+            fileLink :'',
+            createdAt : '2025-07-09',
         },
 
     ];
@@ -47,6 +55,13 @@ const ComponentShowcase = () => {
                             description={comp.description}
                             viewMode={viewModes[comp.id]}
                             onViewModeChange={(mode) => handleViewModeChange(comp.id, mode)}
+                            designerName={comp.designerName}
+                            designerLink={comp.designerLink}
+                            developerName={comp.developerName}
+                            developerLink={comp.developerLink}
+                            fileLink={comp.fileLink}
+                            createdAt={comp.createdAt}
+                            status="active"
                         />
                     ))}
                 </div>
