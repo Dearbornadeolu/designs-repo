@@ -1,6 +1,7 @@
-'use client'
-import { ArrowRight, ChevronDown, Play } from "lucide-react";
+'use client';
+import { ArrowRight, Play } from "lucide-react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -77,23 +78,29 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
-        {/* Video Play Button - smaller and more subtle */}
+        {/* Video Play Button - Link */}
         <div className="mb-6">
-          <button className="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 group">
+          <Link
+            href="/gallery"
+            className="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 group"
+          >
             <Play className="w-4 h-4 ml-0.5 text-white group-hover:scale-110 transition-transform" />
-          </button>
+          </Link>
         </div>
 
-        {/* Unlock Assets Button - more prominent pill shape */}
+        {/* Unlock Assets Button - Link */}
         <div className="mb-10">
-          <button className="flex items-center space-x-3 bg-black bg-opacity-60 px-6 py-3 rounded-full text-sm font-medium backdrop-blur-sm border border-white border-opacity-25 hover:bg-opacity-70 transition-all duration-300">
+          <Link
+            href="/gallery"
+            className="flex items-center space-x-3 bg-black bg-opacity-60 px-6 py-3 rounded-full text-sm font-medium backdrop-blur-sm border border-white border-opacity-25 hover:bg-opacity-70 transition-all duration-300"
+          >
             <div className="w-3 h-3 bg-white rounded-full"></div>
             <span className="text-white">Unlock Your Assets Spark!</span>
             <ArrowRight className="w-4 h-4 text-white" />
-          </button>
+          </Link>
         </div>
 
-        {/* Main Heading - exact typography matching */}
+        {/* Main Heading */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 leading-tight tracking-tight">
             Unleash Stunning Designs with{' '}
@@ -109,22 +116,28 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Action Buttons - refined styling */}
-        <div className="flex items-center space-x-4 mb-20 relative">
-          <button className="bg-black bg-opacity-70 px-8 py-3 rounded-full text-white font-medium border border-white border-opacity-25 hover:bg-white hover:text-black transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm">
+        {/* Action Buttons - now Links */}
+        <div className="flex flex-col md:flex-row gap-2 items-center space-x-4 mb-20 relative">
+          <Link
+            href="/gallery"
+            className="bg-black bg-opacity-70 px-8 py-3 rounded-full text-white font-medium border border-white border-opacity-25 hover:bg-white hover:text-black transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm"
+          >
             <span>Get Started Now</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
-          <button className="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300">
+          </Link>
+          <Link
+            href="/gallery"
+            className="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300"
+          >
             Discover More
-          </button>
+          </Link>
           
           {/* Rainfall lines under buttons */}
           <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-8">
             {[...Array(5)].map((_, index) => (
               <div
                 key={index}
-                className="absolute bg-white opacity-20"
+                className = "absolute bg-white opacity-20"
                 style={{
                   left: `${(index - 2) * 20}px`,
                   top: `${index * 15}px`,
@@ -137,8 +150,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-
-
 
         <div className="absolute bottom-16 right-8 text-right">
           <div className="text-white font-light text-sm mb-3 tracking-wide">Design & Development</div>
@@ -188,7 +199,6 @@ export default function Home() {
           style={{ animationDelay: '0.5s' }}
         />
       </svg>
-
     </div>
   );
 }

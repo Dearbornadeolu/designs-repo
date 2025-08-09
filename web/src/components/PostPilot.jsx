@@ -4,7 +4,7 @@ import { Play, ChevronRight } from 'lucide-react';
 const PostPilot = () => {
     return (
         <div 
-            className="min-h-screen bg-white pt-1.5 relative overflow-hidden"
+            className="min-h-screen bg-white pt-2 relative overflow-hidden"
             style={{
                 backgroundImage: `url('/hero-sections/postpilotbg.png')`,
                 backgroundSize: '89%',
@@ -13,7 +13,7 @@ const PostPilot = () => {
             }}
         >
             {/* Header */}
-            <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-100 ">
+            <header className="flex items-center justify-between px-6 py-6 bg-white border-b border-gray-100 ">
                 <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-white transform rotate-45 flex items-center justify-center">
                         <div className="w-4 h-4 bg-black transform"></div>
