@@ -3,11 +3,13 @@ import { useState } from "react";
 import PostPilot from "@/components/PostPilot";
 import PreviewCanvas from "../preview/PreviewCanvas";
 import imageforpilot from '../../../public/hero-sections/pilot-section-mobile.png';
+import Cloudddy from "@/components/Cloudddy";
 
 
 const ComponentShowcase = () => {
     const [viewModes, setViewModes] = useState({
         postpilot: 'desktop',
+        cloudddy: 'desktop',
         dashboard: 'desktop',
         landing: 'desktop'
     });
@@ -32,6 +34,21 @@ const ComponentShowcase = () => {
             createdAt: '2025-07-09',
             screenshotUrl: imageforpilot
         },
+        {
+            id: 'cloudddy',
+            component: Cloudddy,
+            title: 'Cloudddy',
+            description: 'A cloud-based file management system with a sleek interface and powerful features.',
+            viewMode: viewModes.cloudddy,
+            onViewModeChange: (mode) => handleViewModeChange('cloudddy', mode),
+            designerName: 'Golem | UI Designer',
+            designerLink: 'https://x.com/DesignsByGolem',
+            developerName: 'Dearborn Adeyeni',
+            developerLink: 'github.com/Dearbornadeolu',
+            fileLink: '',
+            createdAt: '2025-07-09',
+            screenshotUrl: ''
+        }
     ];
 
     return (
