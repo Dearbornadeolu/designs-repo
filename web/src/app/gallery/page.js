@@ -2,6 +2,7 @@
 import { useState } from "react";
 import PostPilot from "@/components/PostPilot";
 import PreviewCanvas from "../preview/PreviewCanvas";
+import imageforpilot from '../../../public/hero-sections/pilot-section-mobile.png';
 
 
 const ComponentShowcase = () => {
@@ -29,7 +30,7 @@ const ComponentShowcase = () => {
             developerLink: 'github.com/Dearbornadeolu',
             fileLink: '',
             createdAt: '2025-07-09',
-            screenshotUrl: '../../../public/hero-sections/pilot-section-mobile.png' 
+            screenshotUrl: imageforpilot
         },
     ];
 
