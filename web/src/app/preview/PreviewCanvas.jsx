@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Smartphone, Globe } from 'lucide-react';
+import { Monitor, Smartphone } from 'lucide-react';
 
 const PreviewCanvas = ({
   component: Component,
@@ -13,10 +13,13 @@ const PreviewCanvas = ({
   developerLink,
   fileLink,
   createdAt,
-  status
+  status,
+  screenshotUrl // New prop
 }) => {
+
+  console.log('Rendering PreviewCanvas with viewMode:', viewMode);
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col ">
+    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col">
       {/* Left - Preview */}
       <div className="flex-1 border-b md:border-b-0 md:border-r border-gray-200">
         {/* Canvas Header */}
@@ -46,7 +49,7 @@ const PreviewCanvas = ({
             </svg>
           </div>
 
-          {/* Component */}
+          {/* Component or Screenshot */}
           <div
             className={`relative bg-white shadow-2xl transition-all duration-500 ease-in-out overflow-hidden ${
               viewMode === 'mobile'
@@ -62,7 +65,15 @@ const PreviewCanvas = ({
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
             )}
             <div className="h-full overflow-auto">
-              <Component />
+              {viewMode === 'mobile' ? (
+                <img
+                  src={screenshotUrl}
+                  alt={`${title} Desktop Screenshot`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Component />
+              )}
             </div>
           </div>
         </div>
@@ -102,7 +113,6 @@ const PreviewCanvas = ({
           <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
           <p className="text-sm text-gray-600">{description}</p>
         </div>
-
         <div className="text-sm text-gray-700 space-y-1">
           <p>
             <span className="font-medium">Designer:</span>{' '}
@@ -123,7 +133,6 @@ const PreviewCanvas = ({
             </a>
           </p>
         </div>
-
         <div className="text-xs text-gray-500 border-t pt-3">
           <p>Created: {createdAt}</p>
           <p>Status: <span className="font-medium text-green-600">{status}</span></p>
